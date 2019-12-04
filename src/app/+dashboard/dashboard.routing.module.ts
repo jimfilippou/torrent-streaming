@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
         {
           path: 'torrents',
-          loadChildren: '../torrents/torrents.module#TorrentsModule'
+          loadChildren: '../+torrents/torrents.module#TorrentsModule'
         }
     ]
   }

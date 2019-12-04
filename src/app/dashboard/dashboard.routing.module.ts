@@ -7,10 +7,10 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'dashboard'
-      }
+        {
+          path: 'torrents',
+          loadChildren: '../torrents/torrents.module#TorrentsModule'
+        }
     ]
   }
 ];

@@ -13,9 +13,9 @@ export class DashboardComponent {
 
   routes: Route[] = [
     {
-      path: `${this.path}/vendors`,
-      text: 'Επιχειρήσεις',
-      icon: 'fas fa-briefcase'
+      path: `${this.path}/torrents`,
+      text: 'Torrents',
+      icon: 'fas fa-link'
     }
   ];
   activeRoute: Route;

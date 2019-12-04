@@ -1,4 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild, ElementRef} from '@angular/core';
+
+declare const WebTorrent: any;
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-torrents',
@@ -7,7 +14,28 @@ import {Component} from '@angular/core';
 })
 export class TorrentsComponent {
 
+  @ViewChild('video', {static: false}) video: ElementRef;
+
   constructor() {
+  }
+
+  downloadTorrent(): void {
+    const x = prompt("Paste the magnet URL");
+    const client = new WebTorrent();
+
+
+    client.add(x, (torrent:any) => {
+
+      torrent.on("download", (bytes: number) => {
+        console.log(bytes);
+      });
+
+      const file = torrent.files.find(function (file) {
+        return file.name.endsWith('.mp4')
+      })
+
+      file.appendTo(this.video.nativeElement)
+    })
   }
 
 }

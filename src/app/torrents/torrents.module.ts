@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TorrentsRoutingModule } from './torrents-routing.module';
 import { TorrentsComponent } from './torrents.component';
+import { MatButtonModule, MatButton, MatFormFieldModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +13,10 @@ import { TorrentsComponent } from './torrents.component';
   ],
   imports: [
     CommonModule,
-    TorrentsRoutingModule
+    FormsModule,
+    TorrentsRoutingModule,
+    MatButtonModule,
+    MatFormFieldModule
   ]
 })
 export class TorrentsModule { }

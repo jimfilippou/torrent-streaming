@@ -1,6 +1,7 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
+import * as WebTorrent from 'webtorrent';
 
-declare const WebTorrent: any;
+// declare const WebTorrent: WebTorrent;
 
 export interface DialogData {
   animal: string;

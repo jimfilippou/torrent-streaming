@@ -74,6 +74,7 @@ export class StreamComponent implements OnInit {
 			this.activeTorrent = null;
 		});
 		this.magnet = '';
+		this.selectedFile = undefined;
 		this.files = [];
 		this._video.nativeElement.children[0].remove();
 	}

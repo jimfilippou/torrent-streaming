@@ -6,10 +6,10 @@
   </div>
 
   <div class="row pt-3 pl-5">
-    <div class="col-12">
-      <input id="file" (change)="handleFileInput($event.target.files)" type="file">
+    <div class="col-3 d-flex">
+      <input id="file" (change)="handleFileInput($event.target.files)" type="file" class="my-auto">
     </div>
-    <div class="col-4 d-flex">
+    <div class="col-7 d-flex">
       <b class="my-auto mr-3">OR </b>
       <mat-form-field class="w-100">
         <input [(ngModel)]="magnet" matInput placeholder="Paste magnet URL here">
@@ -21,7 +21,7 @@
         (click)="previewTorrent()"
         class="my-auto"
       >
-        Preview
+        Preview torrent
       </button>
     </div>
   </div>

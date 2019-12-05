@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-free": "^5.11.2",
     "bootstrap": "^4.4.1",
     "hammerjs": "^2.0.8",
+    "parse-torrent": "^7.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "webtorrent": "^0.107.17",

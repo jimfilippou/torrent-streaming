@@ -2,39 +2,44 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+	selector: 'app-dashboard',
+	templateUrl: './dashboard.component.html',
+	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
 
-  path = '/dashboard';
+	path = '/dashboard';
 
 
-  routes: Route[] = [
-    {
-      path: `${this.path}/torrents`,
-      text: 'Torrents',
-      icon: 'fas fa-link'
-    }
-  ];
-  activeRoute: Route;
+	routes: Route[] = [
+		{
+			path: `${this.path}/stream`,
+			text: 'Stream',
+			icon: 'fas fa-eye'
+		},
+		{
+			path: `${this.path}/torrents`,
+			text: 'Torrents',
+			icon: 'fas fa-link'
+		}
+	];
+	activeRoute: Route;
 
-  constructor(public router: Router) {
-  }
+	constructor(public router: Router) {
+	}
 
-  selectRoute(route: Route) {
-    this.activeRoute = route;
-  }
+	selectRoute(route: Route) {
+		this.activeRoute = route;
+	}
 
-  getOut() {
-    this.router.navigate(['/']);
-  }
+	getOut() {
+		this.router.navigate(['/']);
+	}
 
 }
 
 interface Route {
-  path: string;
-  text: string;
-  icon: string;
+	path: string;
+	text: string;
+	icon: string;
 }

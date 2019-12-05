@@ -3,9 +3,6 @@ import {CommonModule} from '@angular/common';
 
 import {TorrentsRoutingModule} from './torrents-routing.module';
 import {TorrentsComponent} from './torrents.component';
-import {MatButtonModule, MatButton, MatFormFieldModule} from '@angular/material';
-import {FormsModule} from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -14,11 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 	],
 	imports: [
 		CommonModule,
-		FormsModule,
 		TorrentsRoutingModule,
-		MatButtonModule,
-		MatFormFieldModule,
-		MatTableModule
 	]
 })
 export class TorrentsModule {

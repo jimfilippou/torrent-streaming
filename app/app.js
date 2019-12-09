@@ -1,24 +1,27 @@
 module.exports = () => {
   // Load The FS Module & The Config File
-  fs = require("fs");
+  const fs = require("fs");
 
   // Load The Path Module
-  path = require("path");
+  const path = require("path");
+
+  // Load the Web Torrent Module
+  const WebTorrent = require('webtorrent');
 
   // Load the configuration JSON file
-  config = JSON.parse(fs.readFileSync("config.json"));
+  const config = JSON.parse(fs.readFileSync("config.json"));
 
   // Load Express Module
-  express = require("express");
-  app = express();
+  const express = require("express");
+  const app = express();
 
   // Load Body Parser Module
-  bodyParser = require("body-parser");
+  const bodyParser = require("body-parser");
   app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.urlencoded({extended: false}));
 
   // Load Express Handlebars Module & Setup Express View Engine
-  expressHandlebars = require("express-handlebars");
+  const expressHandlebars = require("express-handlebars");
   app.set("views", __dirname + "/views/"); // Set The Views Directory
   app.engine(
     "html",
@@ -28,11 +31,10 @@ module.exports = () => {
       defaultLayout: "main",
       extname: ".html",
       helpers: {
-        section: function(name, options) {
+        section: function (name, options) {
           if (!this._sections) {
             this._sections = {};
           }
-
           this._sections[name] = options.fn(this);
           return null;
         }
@@ -42,7 +44,7 @@ module.exports = () => {
   app.set("view engine", "html");
 
   // Load Express Session Module
-  session = require("express-session");
+  const session = require("express-session");
   app.use(
     session({
       // Setup Session Middleware
@@ -56,7 +58,7 @@ module.exports = () => {
   app.use(express.static(path.join(__dirname, "/../public/")));
 
   // Load Available Modules For Dependancy Injection Into Models & Routes
-  modules = {
+  const modules = {
     app: app,
     bodyParser: bodyParser,
     config: config,
@@ -64,11 +66,12 @@ module.exports = () => {
     expressHandlebars: expressHandlebars,
     fs: fs,
     path: path,
-    session: session
+    session: session,
+    WebTorrent: WebTorrent
   };
 
   // Setup Globally Included Routes
-  fs.readdirSync(path.join(__dirname, "routes")).forEach(function(filename) {
+  fs.readdirSync(path.join(__dirname, "routes")).forEach(function (filename) {
     if (~filename.indexOf(".js"))
       require(path.join(__dirname, "routes/" + filename))(modules);
   });

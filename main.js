@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require("electron");
+const { app, BrowserWindow } = require("electron");
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json'));
 

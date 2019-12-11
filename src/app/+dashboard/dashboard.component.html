@@ -1,0 +1,44 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="sidenav" mode="side" [opened]="true">
+    <div class="row m-0 pt-4 pb-4 justify-content-center">
+      <img src="../../assets/images/logo_opa.png" alt="">
+      
+    </div>
+    <div class="row justify-content-center pb-4 mx-0">
+      <small class="text-white col-12 text-center">AUEB.GR</small>
+      <small class="text-white-50 col-12 text-center">Έκδοση 0.0.1</small>
+    </div>
+    <div
+      class="row route-wrapper ml-0 mr-0 quint-cool"
+      *ngFor="let route of routes"
+      (click)="selectRoute(route)"
+      [routerLink]="route.path"
+      routerLinkActive
+      #rla1="routerLinkActive"
+      [class.active]="rla1.isActive"
+    >
+      <div class="col-auto">
+        <i [ngClass]="route.icon"></i>
+      </div>
+      <div class="col text-left pl-0">
+        <a class="route">{{route.text}}</a>
+      </div>
+    </div>
+
+    <div class="row m-0 bottom-user-panel p-3">
+      <div class="col-auto d-flex pl-0 pr-3">
+
+      </div>
+      <div class="col d-flex p-0">
+        <p class="mt-auto mb-auto m-0 text-white panel-text">User Admin</p>
+      </div>
+      <div class="col d-flex p-0 text-center">
+        <p (click)="getOut()" class="mt-auto mb-auto m-0 text-white-50 panel-text sign-out">Exit</p>
+      </div>
+    </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

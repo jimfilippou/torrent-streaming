@@ -1,0 +1,62 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+.sidenav {
+  background: #752123;;  /* fallback for old browsers */
+  width: 250px;
+}
+
+.route-wrapper {
+  padding: 10px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.active {
+    background: #FFFFFF;
+
+    .route {
+      color: #752123
+    }
+
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.171564);
+  }
+
+  .route {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: .8em;
+  }
+}
+
+.bottom-user-panel {
+  box-shadow: 0 -4px 50px rgba(0, 0, 0, 0.270862);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .panel-text {
+    font-size: .8em;
+  }
+
+  .sign-out {
+    cursor: pointer;
+  }
+}
+
+.quint-cool {
+  transition: all ease-out .2s;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}

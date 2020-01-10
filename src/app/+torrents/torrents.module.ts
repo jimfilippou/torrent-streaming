@@ -1,8 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {TorrentsRoutingModule} from './torrents-routing.module';
-import {TorrentsComponent} from './torrents.component';
+import { TorrentsRoutingModule } from './torrents-routing.module';
+import { TorrentsComponent } from './torrents.component';
+import { MatButtonModule, MatProgressSpinnerModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,7 +13,10 @@ import {TorrentsComponent} from './torrents.component';
 	],
 	imports: [
 		CommonModule,
+		HttpClientModule,
 		TorrentsRoutingModule,
+		MatButtonModule,
+		MatProgressSpinnerModule
 	]
 })
 export class TorrentsModule {

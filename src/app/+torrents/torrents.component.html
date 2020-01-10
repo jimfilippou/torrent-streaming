@@ -1,1 +1,21 @@
-<p>Torrents component works</p>
+<div class="container-fluid">
+    <div class="row px-5 pt-5">
+        <div class="col-auto d-flex align-items-center">
+            <button (click)="askMagnet()" mat-fab color="secondary"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+            <p class="m-0">Add a new torrent</p>
+        </div>
+        <div class="col d-flex flex-row align-items-center justify-content-center">
+            <mat-progress-spinner *ngIf="loading" diameter="50" mode="indeterminate"></mat-progress-spinner>
+            <p *ngIf="loading" class="pl-3 mb-0">Downloading...</p>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+            <p class="m-0">Copy a dummy magnet link</p>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+            <button (click)="copyMessage()" mat-fab color="secondary"><i class="fas fa-copy"></i></button>
+        </div>
+        <div id="v"></div>
+    </div>
+</div>
